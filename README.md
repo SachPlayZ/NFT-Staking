@@ -178,14 +178,27 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
 
 ### Quick Deploy (ZKSync Era Sepolia)
 
+**Using Foundry account (recommended):**
+
 ```bash
-# Set environment variables
-export PRIVATE_KEY=<your-private-key>
-export TREASURY_ADDRESS=<treasury-address>
+# Add account to Foundry (if not already added)
+cast wallet import deployer --interactive
 
 # Deploy
 forge script script/Deploy.s.sol:Deploy \
   --rpc-url https://sepolia.era.zksync.dev \
+  --account deployer \
+  --broadcast \
+  --verify
+```
+
+**Or using private key directly:**
+
+```bash
+# Deploy
+forge script script/Deploy.s.sol:Deploy \
+  --rpc-url https://sepolia.era.zksync.dev \
+  --private-key $PRIVATE_KEY \
   --broadcast \
   --verify
 ```

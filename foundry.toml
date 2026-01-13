@@ -25,4 +25,6 @@ remappings = [
     "forge-std/=lib/forge-std/src/",
 ]
 
+[etherscan]
+zksync_sepolia = { key = "IXC6WG7QKETAQB59T6B8XVMY31M4VPMNU9", url = "https://explorer.sepolia.era.zksync.dev/api" }
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
